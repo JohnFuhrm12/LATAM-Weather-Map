@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Scrape city weather info from Google using BeautifulSoup
-city = "Buenos Aires"
+city = "Bogotá"
 url = "https://www.google.com/search?q=" + "weather" + city
 html = requests.get(url).content
 soup = BeautifulSoup(html, 'html.parser')
@@ -31,16 +31,16 @@ WIN = pygame.display.set_mode((WIDTH, HEIGHT))
 
 # Countries Flag
 FLAG = pygame.transform.scale(pygame.image.load(
-    os.path.join("Flags", "arg_flag.jpg")), (150, 100))
+    os.path.join("Flags", "col_flag.jpg")), (150, 100))
 
 # RGB Colors
 WHITE = (255, 255, 255)
 BLACK = (0, 0, 0)
 
 BACKGROUND_BA = pygame.transform.scale(pygame.image.load(
-    os.path.join("Cities", "ba.jpg")), (WIDTH, HEIGHT))
+    os.path.join("Cities", "bog.jpg")), (WIDTH, HEIGHT))
 
-def draw_ba_window():
+def draw_bog_window():
     WIN.blit(BACKGROUND_BA, (0, 0))
     city_text = CITY_FONT.render(
         (city), 1, BLACK)
@@ -56,4 +56,3 @@ def draw_ba_window():
     WIN.blit(time_text, (20, 125))
     WIN.blit(sky_text, (20, 180))
     WIN.blit(FLAG, (330, 20))
-

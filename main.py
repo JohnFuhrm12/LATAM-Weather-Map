@@ -1,7 +1,11 @@
 import pygame
 import button
-import buenosaires
 import os
+
+import buenosaires
+import bogota
+import brasilia
+
 pygame.font.init()
 
 # Tests
@@ -23,42 +27,82 @@ BACKGROUND_MAP = pygame.transform.scale(pygame.image.load(
 # RGB Colors
 WHITE = (255, 255, 255)
 
-# Draws app window
-def draw_window():
-    WIN.blit(BACKGROUND_MAP, (0, 0))
-
-# Button image
-DOT = pygame.transform.scale(pygame.image.load(
-    os.path.join("Assets", "dot.png")), (20, 20))
-
 # Button locations
-BA = button.button(240, 470, DOT)
-BOGOTA = button.button(80, 80, DOT)
-BRASILIA = button.button(340, 270, DOT)
+BA = button.Button(240, 470, button.DOT)
+BOGOTA = button.Button(80, 80, button.DOT)
+BRASILIA = button.Button(340, 270, button.DOT)
 
 # Keeps the app window open until user quits
-def main():
+def main_menu():
     run = True
     while run:
+        WIN.fill((0, 0, 0))
+        WIN.blit(BACKGROUND_MAP, (0, 0))
+        BA.draw(WIN)
+        BOGOTA.draw(WIN)
+        BRASILIA.draw(WIN)
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 pygame.quit()
 
-            # Do something when button is clicked
-            if BA.draw():
-                buenosaires.draw_ba_window()
-            if BOGOTA.draw():
-                print("BOG")
-            if BRASILIA.draw():
-                print("BRA")
-
-            draw_window()
-            BA.draw()
-            BOGOTA.draw()
-            BRASILIA.draw()
+        if BA.draw(WIN):
+            ba_screen()
+        if BOGOTA.draw(WIN):
+            bog_screen()
+        if BRASILIA.draw(WIN):
+            bra_screen()
 
         pygame.display.update()
 
+# Separate Game Loops for City Screens
 
-main()
+# Buenos Aires
+def ba_screen():
+    run = True
+    while run:
+        WIN.fill((0, 0, 0))
+        buenosaires.draw_ba_window()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                pygame.quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    run = False
+
+            pygame.display.update()
+
+# Bogota
+def bog_screen():
+    run = True
+    while run:
+        WIN.fill((0, 0, 0))
+        bogota.draw_bog_window()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                pygame.quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    run = False
+
+            pygame.display.update()
+
+# Brasilia
+def bra_screen():
+    run = True
+    while run:
+        WIN.fill((0, 0, 0))
+        brasilia.draw_bra_window()
+        for event in pygame.event.get():
+            if event.type == pygame.QUIT:
+                run = False
+                pygame.quit()
+            if event.type == pygame.KEYDOWN:
+                if event.key == pygame.K_ESCAPE:
+                    run = False
+
+            pygame.display.update()
+
+main_menu()
