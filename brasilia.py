@@ -23,8 +23,8 @@ sky = data[1]
 # Text Fonts
 CITY_FONT = pygame.font.SysFont('arial', 60)
 TEMP_FONT = pygame.font.SysFont('arial', 40)
-TIME_FONT = pygame.font.SysFont('arial', 45)
-SKY_FONT = pygame.font.SysFont('arial', 45)
+TIME_FONT = pygame.font.SysFont('arial', 40)
+SKY_FONT = pygame.font.SysFont('arial', 35)
 
 WIDTH, HEIGHT = 500, 700  # Game window dimensions
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))
@@ -45,7 +45,7 @@ def draw_bra_window():
     city_text = CITY_FONT.render(
         (city), 1, BLACK)
     temp_text = TEMP_FONT.render(
-        "Temperature: " + (temp), 1, BLACK)
+        "Temperatura: " + (temp), 1, BLACK)
     time_text = TIME_FONT.render(
         (time.capitalize()), 1, BLACK)
     sky_text = SKY_FONT.render(
