@@ -7,4 +7,4 @@ This will bring you to a new page where the local weather for the city is fetche
 
 Press the ESC key to return to the map
 
-When installing, make sure the images in the Assets, Cities, and Flags are in there own respective files along with the main .py files
+When installing, make sure the Assets, Cities, and Flags folders are in along with the main .py files
