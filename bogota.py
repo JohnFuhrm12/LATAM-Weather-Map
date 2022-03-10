@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Scrape city weather info from Google using BeautifulSoup
-city = "Bogotá"
+city = "Bogotá, Colombia"
 url = "https://www.google.com/search?q=" + "weather" + city
 html = requests.get(url).content
 soup = BeautifulSoup(html, 'html.parser')
@@ -43,7 +43,7 @@ BACKGROUND_BA = pygame.transform.scale(pygame.image.load(
 def draw_bog_window():
     WIN.blit(BACKGROUND_BA, (0, 0))
     city_text = CITY_FONT.render(
-        (city), 1, BLACK)
+        ("Bogotá"), 1, BLACK)
     temp_text = TEMP_FONT.render(
         "Temperatura: " + (temp), 1, BLACK)
     time_text = TIME_FONT.render(

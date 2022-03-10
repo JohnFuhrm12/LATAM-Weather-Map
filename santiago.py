@@ -43,7 +43,7 @@ BACKGROUND = pygame.transform.scale(pygame.image.load(
 def draw_santiago_window():
     WIN.blit(BACKGROUND, (0, 0))
     city_text = CITY_FONT.render(
-        (city), 1, BLACK)
+        ("Santiago"), 1, BLACK)
     temp_text = TEMP_FONT.render(
         "Temperatura: " + (temp), 1, BLACK)
     time_text = TIME_FONT.render(

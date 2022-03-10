@@ -1,6 +1,7 @@
 import pygame
 import cap_button
 import button
+import sys
 import os
 
 import buenosaires
@@ -18,7 +19,7 @@ import cusco
 import manaus
 import bariloche
 
-pygame.font.init()
+pygame.init()
 
 WIDTH, HEIGHT = 500, 700  # Game window dimensions
 WIN = pygame.display.set_mode((WIDTH, HEIGHT))  # Makes app window
@@ -50,6 +51,7 @@ CUSCO = button.Button(105, 260, button.DOT)
 MANAUS = button.Button(220, 160, button.DOT)
 BARILOCHE = button.Button(135, 530, button.DOT)
 
+
 # Keeps the app window open until user quits
 def main_menu():
     run = True
@@ -70,10 +72,12 @@ def main_menu():
         CUSCO.draw(WIN)
         MANAUS.draw(WIN)
         BARILOCHE.draw(WIN)
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
                 pygame.quit()
+                sys.exit()
 
         if BA.draw(WIN):
             ba_screen()
@@ -104,7 +108,6 @@ def main_menu():
         if BARILOCHE.draw(WIN):
             barilo_screen()
 
-        pygame.display.update()
 
 # Separate Game Loops for City Screens
 
@@ -114,6 +117,7 @@ def ba_screen():
     while run:
         WIN.fill((0, 0, 0))
         buenosaires.draw_ba_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -122,7 +126,6 @@ def ba_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Bogota
 def bog_screen():
@@ -130,6 +133,7 @@ def bog_screen():
     while run:
         WIN.fill((0, 0, 0))
         bogota.draw_bog_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -138,7 +142,6 @@ def bog_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Brasilia
 def bra_screen():
@@ -146,6 +149,7 @@ def bra_screen():
     while run:
         WIN.fill((0, 0, 0))
         brasilia.draw_bra_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -154,7 +158,6 @@ def bra_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Rio
 def rio_screen():
@@ -162,6 +165,7 @@ def rio_screen():
     while run:
         WIN.fill((0, 0, 0))
         rio.draw_rio_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -170,7 +174,6 @@ def rio_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Lima
 def lima_screen():
@@ -178,6 +181,7 @@ def lima_screen():
     while run:
         WIN.fill((0, 0, 0))
         lima.draw_lima_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -186,7 +190,6 @@ def lima_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Santiago
 def santiago_screen():
@@ -194,6 +197,7 @@ def santiago_screen():
     while run:
         WIN.fill((0, 0, 0))
         santiago.draw_santiago_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -202,7 +206,6 @@ def santiago_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Caracas
 def caracas_screen():
@@ -210,6 +213,7 @@ def caracas_screen():
     while run:
         WIN.fill((0, 0, 0))
         caracas.draw_caracas_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -218,7 +222,6 @@ def caracas_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # La Paz
 def lapaz_screen():
@@ -226,6 +229,7 @@ def lapaz_screen():
     while run:
         WIN.fill((0, 0, 0))
         lapaz.draw_caracas_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -234,7 +238,6 @@ def lapaz_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # La Paz
 def asuncion_screen():
@@ -242,6 +245,7 @@ def asuncion_screen():
     while run:
         WIN.fill((0, 0, 0))
         asuncion.draw_asun_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -250,7 +254,6 @@ def asuncion_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Quito
 def quito_screen():
@@ -258,6 +261,7 @@ def quito_screen():
     while run:
         WIN.fill((0, 0, 0))
         quito.draw_ecuad_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -266,7 +270,6 @@ def quito_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Montevideo
 def mont_screen():
@@ -274,6 +277,7 @@ def mont_screen():
     while run:
         WIN.fill((0, 0, 0))
         montevideo.draw_mont_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -282,7 +286,6 @@ def mont_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Cusco
 def cusco_screen():
@@ -290,6 +293,7 @@ def cusco_screen():
     while run:
         WIN.fill((0, 0, 0))
         cusco.draw_cusco_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -298,7 +302,6 @@ def cusco_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Manaus
 def manaus_screen():
@@ -306,6 +309,7 @@ def manaus_screen():
     while run:
         WIN.fill((0, 0, 0))
         manaus.draw_manaus_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -314,7 +318,6 @@ def manaus_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 # Bariloche
 def barilo_screen():
@@ -322,6 +325,7 @@ def barilo_screen():
     while run:
         WIN.fill((0, 0, 0))
         bariloche.draw_barilo_window()
+        pygame.display.update()
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 run = False
@@ -330,6 +334,5 @@ def barilo_screen():
                 if event.key == pygame.K_ESCAPE:
                     run = False
 
-            pygame.display.update()
 
 main_menu()
