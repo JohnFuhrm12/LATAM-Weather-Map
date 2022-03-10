@@ -8,3 +8,4 @@ This will bring you to a new page where the local weather for the city is fetche
 Press the ESC key to return to the map
 
 When installing, make sure the Assets, Cities, and Flags folders are in along with the main .py files
+![latam](https://user-images.githubusercontent.com/61069716/157578712-9b9734b4-02d4-4ceb-92f1-5bdaf94e7a3f.png)
