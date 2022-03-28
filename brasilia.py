@@ -6,7 +6,7 @@ import requests
 from bs4 import BeautifulSoup
 
 # Scrape city weather info from Google using BeautifulSoup
-city = "Brasilia, Brasil"
+city = "Brasilia, Brazil"
 url = "https://www.google.com/search?q=" + "weather" + city
 html = requests.get(url).content
 soup = BeautifulSoup(html, 'html.parser')
